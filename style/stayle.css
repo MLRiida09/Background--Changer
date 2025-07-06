@@ -1,0 +1,75 @@
+  /* css style for everthing*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+  /* varaibles  */
+
+:root {
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* main color */
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  background-size: 300% 300%;
+  background-position: 0% 50%;
+
+  /* transition  */
+ 
+  transition: background 0.5s ease-out;
+}
+
+/* animation for background gradient*/
+
+body.animate-gradient {
+  animation: moveGradient 5s linear infinite;
+}
+
+/* animation for color gradient*/
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* button */
+button {
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+  cursor: pointer;
+}
+
+.button_top {
+  display: block;
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  color: var(--button_outline_color);
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+button:hover .button_top {
+  transform: translateY(-4px);
+}
+
+button:active .button_top {
+  transform: translateY(0);
+}
